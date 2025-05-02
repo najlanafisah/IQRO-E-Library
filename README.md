@@ -1,4 +1,4 @@
-# 📚 IQRA – Online E-Library
+#  IQRA – Online E-Library
 
 **IQRA** is a simple online e-library platform that allows users to borrow books easily. This project was built to support digital literacy through a practical and modern borrowing system.
 
@@ -6,11 +6,11 @@
 
 ## ✨ Features
 
-- 🔍 Search books by title or category
-- 📖 Borrow books online with one click
-- 📂 User dashboard for borrowing history and status
-- 🎨 Responsive and clean design (Blade + SCSS)
-- 🔐 User login and registration
+-  Search books by title or category
+-  Borrow books online with one click
+-  User dashboard for borrowing history and status
+-  Responsive and clean design (Blade + SCSS)
+-  User login and registration
 
 ---
 
@@ -64,7 +64,7 @@ Want to help?
 - Create a new branch: git checkout -b feature-name
 - Commit changes: git commit -m "Add new feature"
 -  Push to branch: git push origin feature-name
--  Open a Pull Request 🚀
+-  Open a Pull Request
 
 📬 Contact
 Questions or ideas?
