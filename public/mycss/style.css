@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: white;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.login {
+    min-height: 80vh;
+    margin-top: 10rem;
+}
+
+.hero .container img {
+    width: 50%;
+    padding-top: 4rem;
+}
+
+.hero button {
+    margin-top: 2rem;
+}
+
+.section-title {
+    font-weight: bold;
+    color: black;
+}
+
+
+.card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+
+.category-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 1rem;
+}
+
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(128, 0, 128, 0.2);
+}
+
+.btn-line {
+    background-color: transparent;
+    color: black;
+    border: .1rem solid black;
+    border-radius: 20rem;
+    padding: .6rem 14rem .6rem 1rem;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+.btn-line:hover {
+    background-color: #f3f3f3;
+    color: black;
+    border: .1rem solid black;
+}
+
+.footer h5 {
+    font-size: 38rem;
+    font-weight: 800;
+}
+
+.btn-lihat-buku {
+    justify-content: space-between;
+    border: 0.1rem solid black;
+    border-radius: 20rem;
+    padding: .4rem;
+    width: 17.5rem;
+    background-color: white;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: .2s;
+    margin: 3rem 0 0 30rem;
+}
+
+.btn-lihat-buku:hover {
+    background-color: #f3f3f3;
+}
+
+.btn-lihat-buku .text {
+    color: black;
+    margin-left: 1rem;
+}
+
+.btn-lihat-buku .icon-circle {
+    background-color: #FF7F3F;
+    color: white;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.btn-auth {
+    background-color: #FF7396;
+    color: black;
+    border: 0.1rem solid black;
+    border-radius: 20rem;
+    padding: .6rem 4rem;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.btn-auth:hover {
+    background-color: white;
+    border: 0.1rem solid black;
+}
+
+.btn-pinjam {
+    background-color: #FCCB30;
+    color: black;
+    border: .1rem solid black;
+    border-radius: 20rem;
+    padding: .6rem 4rem;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.btn-pinjam:hover {
+    background-color: transparent;
+    border: .1rem solid black;
+}
+
+.sudah-pinjam {
+    background-color: #FF8048;
+    color: black;
+    border: .1rem solid black;
+    border-radius: 20rem;
+    padding: .6rem 4rem;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.bg-orange {
+    background-color: #FF8048;
+}
+
+.bg-yellow {
+    background-color: #FCCB30;
+}
+
+.bg-blue {
+    background-color: #00AFC7;
+}
+
+@keyframes mantulKananKiri {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(4px);
+    }
+
+    50% {
+        transform: translateX(-4px);
+    }
+
+    75% {
+        transform: translateX(2px);
+    }
+}
+
+.logo-mantul {
+    display: inline-block;
+    animation: mantulKananKiri 1s ease-in-out infinite;
+    animation-delay: 5s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-delay: 3s;
+}

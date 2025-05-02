@@ -10,7 +10,7 @@
 </div>
 @endif
 
-<div class="page-header">
+<div class="page-header  mt-5 mx-4">
     <h3 class="page-title">Tambah Data Buku Baru</h3>
 </div>
 
@@ -25,7 +25,7 @@
 
                     <div class="form-group">
                         <label for="title">Judul Buku</label>
-                        <input name="title" type="text" class="form-control @error('title') is-invalid @enderror" id="title" placeholder="Masukan Judul">
+                        <input name="title" type="text" class="form-control border border-black @error('title') is-invalid @enderror" id="title" placeholder="Masukan Judul">
                         @error('title')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -33,7 +33,7 @@
 
                     <div class="form-group">
                         <label for="category">Pilih Kategori Buku</label>
-                        <select name="category_id" id="category_id" class="form-select">
+                        <select name="category_id" id="category_id" class="border border-black form-select">
                             <option selected disabled>Pilih Kategori Buku...</option>
                             @foreach($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -43,7 +43,7 @@
 
                     <div class="form-group">
                         <label for="author">Penulis</label>
-                        <input name="author" type="text" class="form-control @error('author') is-invalid @enderror" id="author" placeholder="Masukan Penulis">
+                        <input name="author" type="text" class="form-control border border-black @error('author') is-invalid @enderror" id="author" placeholder="Masukan Penulis">
                         @error('author')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -51,7 +51,7 @@
 
                     <div class="form-group">
                         <label for="publisher">Penerbit</label>
-                        <input name="publisher" type="text" class="form-control @error('publisher') is-invalid @enderror" id="publisher" placeholder="Masukan Penerbit">
+                        <input name="publisher" type="text" class="form-control border border-black @error('publisher') is-invalid @enderror" id="publisher" placeholder="Masukan Penerbit">
                         @error('publisher')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -59,7 +59,7 @@
 
                     <div class="form-group">
                         <label for="year">Tahun Cetak</label>
-                        <input name="year" type="number" class="form-control @error('year') is-invalid @enderror" id="year" placeholder="Maukan Tahun Cetak">
+                        <input name="year" type="number" class="form-control border border-black @error('year') is-invalid @enderror" id="year" placeholder="Maukan Tahun Cetak">
                         @error('year')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -67,7 +67,7 @@
 
                     <div class="form-group">
                         <label for="stock">Stok</label>
-                        <input name="stock" type="number" class="form-control @error('stock') is-invalid @enderror" id="stock" placeholder="Masukan Stock">
+                        <input name="stock" type="number" class="form-control border border-black @error('stock') is-invalid @enderror" id="stock" placeholder="Masukan Stock">
                         @error('stock')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -75,13 +75,13 @@
 
                     <div class="form-group">
                         <label for="cover">Upload Cover</label>
-                        <input name="cover" type="file" class="form-control @error('cover') is-invalid @enderror" id="cover" placeholder="Upload Cover">
+                        <input name="cover" type="file" class="form-control border border-black @error('cover') is-invalid @enderror" id="cover" placeholder="Upload Cover">
                         @error('cover')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
 
-                    <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>
+                    <button type="submit" class="btn btn-info border border-black text-black rounded-5 me-2">Submit</button>
                 </form>
             </div>
         </div>

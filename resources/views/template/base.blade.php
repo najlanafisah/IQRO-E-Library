@@ -53,6 +53,8 @@
         </div>
         <!-- page-body-wrapper ends -->
     </div>
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="{{ asset('purple/vendors/js/vendor.bundle.base.js')}}"></script>

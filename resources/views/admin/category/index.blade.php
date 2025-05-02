@@ -10,7 +10,7 @@
 </div>
 @endif
 
-<div class="page-header">
+<div class="page-header mt-5 mx-4">
     <h3 class="page-title">Data Kategori Buku Perpustakaan IDN</h3>
 </div>
 
@@ -20,7 +20,7 @@
             <div class="card-body">
                 <div class="d-flex justify-content-between mb-3">
                     <h4 class="card-title">List Kategori Buku</h4>
-                    <button class="btn btn-rounded btn-gradient-info btn-sm" data-bs-toggle="modal" data-bs-target="#categoryModal">Tambah Kategori</button>
+                    <button class="btn btn-rounded border border-black text-black btn-info btn-md" data-bs-toggle="modal" data-bs-target="#categoryModal">Tambah Kategori</button>
                 </div>
 
                 <table class="table table-striped">
@@ -37,12 +37,12 @@
                         <tr>
                             <td> {{ $category->id }} </td>
                             <td> {{ $category->name }} </td>
-                            <td>
-                                <button class="btn btn-rounded btn-gradient-primary" data-bs-toggle="modal" data-bs-target="#updateCategoryModal{{ $category->id }}">Edit</button>
+                            <td class="d-flex">
+                                <button class="btn btn-warning btn-rounded border border-black text-black mb-2 mx-2 btn-sm" data-bs-toggle="modal" data-bs-target="#updateCategoryModal{{ $category->id }}">Edit</button>
                                 <form action="{{ route('category.destroy', $category->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-rounded btn-gradient-danger">Delete</button>
+                                    <button type="submit" class="btn btn-danger btn-rounded border border-black text-black mx-2 btn-sm">Delete</button>
                                 </form>
                             </td>
                         </tr>

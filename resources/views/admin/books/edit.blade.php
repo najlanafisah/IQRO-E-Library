@@ -1,91 +1,102 @@
 @extends('template.base')
 
-@section('title', 'Update data buku')
+@section('title', 'Update Data Buku')
 
 @section('content')
 
 @if(session('message'))
-<div class="alert alert-warning">
-    {{session('message')}}
+<div class="alert alert-success">
+  {{ session('message') }}
 </div>
 @endif
 
-<div class="page-header">
-    <h3 class="page-title">Update data buku</h3>
+<div class="page-header mt-5 mx-4">
+    <h3 class="page-header">Update Data Buku Perpustakaan IDN</h3>
 </div>
 
 <div class="row">
     <div class="col-12 grid-margin stretch-card">
         <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Silahkan isi untuk memperbaharui data buku</h4>
+          <div class="card-body">
+            <h4 class="card-title">Silahkan isi untuk memperbaharui data buku</h4>
 
-                <form class="forms-sample" action="{{ route('book.store') }}" method="post" enctype="multipart/form-data">
-                    @csrf
+            <form class="forms-sample" action="{{ route('book.update', $book->id) }}" method="post" enctype="multipart/form-data">
+              @csrf
+              @method('PUT')
 
-                    <div class="form-group">
-                        <label for="title">Judul Buku</label>
-                        <input value="{{ $book->title }}" name="title" type="text" class="form-control @error('title') is-invalid @enderror" id="title" placeholder="Masukan Judul">
-                        @error('title')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
+              <div class="form-group">
+                <label for="title">Judul Buku</label>
+                <input value="{{ $book->title }}" name="title" type="text" class="form-control @error('title') is-invalid @enderror" id="title" placeholder="Masukan judul">
+                @error('title')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+              </div>
 
-                    <div class="form-group">
-                        <label for="category">Pilih Kategori Buku</label>
-                        <select name="category_id" id="category_id" class="form-select">
-                            <option selected disabled>Pilih Kategori Buku...</option>
-                            @foreach($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
+              <div class="form-group">
+                <label for="category">Kategori Buku</label>
+                <select name="category_id" id="category_id" class="form-select">
+                  <option selected disabled>{{ $book->category->name }}</option>
+                  @foreach ($categories as $category)
+                  <option value="{{ $category->id }}"
+                    {{ old('category_id', $book->category_id) == $category->id ? 'selected' : ''}}>{{ $category->name }}</option>
+                  @endforeach
+                </select>
+              </div>
 
-                    <div class="form-group">
-                        <label for="author">Penulis</label>
-                        <input name="author" type="text" class="form-control @error('author') is-invalid @enderror" id="author" placeholder="Masukan Penulis">
-                        @error('author')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
+              <div class="form-group">
+                <label for="author">Penulis</label>
+                <input value="{{ $book->author }}" type="text" name="author" class="form-control @error('title') is-invalid @enderror" id="author" placeholder="Masukan nama penulis">
+                @error('title')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+              </div>
 
-                    <div class="form-group">
-                        <label for="publisher">Penerbit</label>
-                        <input name="publisher" type="text" class="form-control @error('publisher') is-invalid @enderror" id="publisher" placeholder="Masukan Penerbit">
-                        @error('publisher')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
+              <div class="form-group">
+                <label for="publisher">Penerbit</label>
+                <input value="{{ $book->publisher }}" type="text" name="publisher" class="form-control @error('publisher') is-invalid @enderror" id="publisher" placeholder="Masukan nama penerbit">
+                @error('publisher')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+              </div>
 
-                    <div class="form-group">
-                        <label for="year">Tahun Cetak</label>
-                        <input name="year" type="number" class="form-control @error('year') is-invalid @enderror" id="year" placeholder="Maukan Tahun Cetak">
-                        @error('year')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
+              <div class="form-group">
+                <label for="year">Tahun Cetak</label>
+                <input value="{{ $book->year }}" type="number" name="year" class="form-control @error('year') is-invalid @enderror" id="year" placeholder="Masukan tahun cetak">
+                @error('year')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+              </div>
 
-                    <div class="form-group">
-                        <label for="stock">Stok</label>
-                        <input name="stock" type="number" class="form-control @error('stock') is-invalid @enderror" id="stock" placeholder="Masukan Stock">
-                        @error('stock')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
+              <div class="form-group">
+                <label for="stock">Stok</label>
+                <input value="{{ $book->stock }}" type="number" name="stock" class="form-control @error('stock') is-invalid @enderror" id="stock" placeholder="Masukan stok buku">
+                @error('stock')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+              </div>
 
-                    <div class="form-group">
-                        <label for="cover">Upload Cover</label>
-                        <input name="cover" type="file" class="form-control @error('cover') is-invalid @enderror" id="cover" placeholder="Upload Cover">
-                        @error('cover')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
+              <div class="form-group">
+                <label for="cover">Upload Cover Buku</label>
+                <input type="file" name="cover" class="form-control @error('cover') is-invalid @enderror" id="cover" placeholder="Masukan cover buku">
+                @error('cover')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+              </div>
 
-                    <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>
-                </form>
+              <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="{{ asset($book->cover) }}" alt="{{ $book->title }}" width="100">
+                </div>
             </div>
+              
+              <button type="submit" class="btn btn-info me-2 border-black border text-black rounded-5 mt-2">Submit</button>
+            </form>
+          </div>
         </div>
-    </div>
+      </div>
 </div>
+
+
+
 
 @endsection

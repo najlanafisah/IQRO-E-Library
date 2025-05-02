@@ -10,7 +10,7 @@
 </div>
 @endif
 
-<div class="page-header">
+<div class="page-header  mt-5 mx-4">
     <h3 class="page-title">Data Buku Perpustakaan IDN</h3>
 </div>
 
@@ -36,20 +36,20 @@
                             <td> {{ $book->title }} </td>
                             <td>
                                 @if($book->stock > 0)
-                                    <span class="badge bg-success">Tersedia ({{ $book->stock }})</span>
+                                    <span class="badge bg-info border px-4 border-black text-black rounded-5">Tersedia ({{ $book->stock }})</span>
                                 @else
-                                    <span class="badge bg-danger">Tidak Tersedia</span>
+                                    <span class="badge bg-danger rounded-5">Tidak Tersedia</span>
                                 @endif
                             </td>
                             <td>
-                                <a href="{{ route('book.detail', $book->id) }}" class="btn btn-gradient-success btn-sm">
-                                    <i class="fas fa-eye"></i>
+                                <a href="{{ route('book.detail', $book->id) }}" class="btn btn-info btn-sm border-black border">
+                                    <i class="fas fa-eye text-black"></i>
                                 </a>
-                                <a href="#" class="btn btn-gradient-warning btn-sm">
-                                    <i class="fa fa-pencil"></i>
+                                <a href="#" class="btn btn-warning btn-sm border-black border">
+                                    <i class="fa fa-pencil text-black"></i>
                                 </a>
-                                <a href="#" class="btn btn-gradient-danger btn-sm">
-                                    <i class="fa fa-trash-can"></i>
+                                <a href="#" class="btn btn-danger btn-sm border-black border">
+                                    <i class="fa fa-trash-can text-black"></i>
                                 </a>
                             </td>
                         </tr>

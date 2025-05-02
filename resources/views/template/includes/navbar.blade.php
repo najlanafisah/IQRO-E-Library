@@ -1,26 +1,25 @@
-<nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+<nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row border-bottom border-black">
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
-        <a class="navbar-brand brand-logo" href="index.html"><img src="{{ asset('purple/images/logo.svg')}}" alt="logo" /></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{ asset('purple/images/logo-mini.svg')}}" alt="logo" /></a>
+        <a class="navbar-brand"><img src="{{ asset('purple/assets/iqra.svg') }}" alt="logo" /></a>
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-stretch">
 
         <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item nav-profile dropdown">
                 <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                    <div class="nav-profile-img">
+                    <div class="nav-profile-img border border-black rounded-circle">
                         <img src="https://ui-avatars.com/api/?name={{ Auth::user()->name }}" alt="image">
                         <span class="availability-status online"></span>
                     </div>
                     <div class="nav-profile-text">
-                        <p class="mb-1 text-black">{{ Auth::user()->name }}</p>
+                        <p class="mb-1 text-black fw-semibold">{{ Auth::user()->name }}</p>
                     </div>
                 </a>
                 <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
                     <a class="dropdown-item" href="{{ route('logout') }}" 
                     onclick="event.preventDefault(); 
                     document.getElementById('logout-form').submit();">
-                        <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
+                        <i class="mdi mdi-logout me-2 fw-bold"></i> Signout </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
